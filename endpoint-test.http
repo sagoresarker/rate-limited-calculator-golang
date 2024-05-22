@@ -60,8 +60,8 @@ Content-Type: application/json
 {
     "username": "testuser",
     "calculator_type": "power",
-    "number1": 0,
-    "number2": 0
+    "number1": 10,
+    "number2": 5
 }
 
 ###

@@ -90,13 +90,45 @@ This endpoint is used to send a ```POST``` request to ```/calculator``` endpoint
 
 **Request Body:** This endpoint require ```username, calculator_type, numbers``` in the  payload in the POST request.
 
+```json
+{
+    "username": "testuser",
+    "calculator_type": "multiply",
+    "number1": 10,
+    "number2": 5
+}
+```
+
 **Response:** The response will contain the status of the operation and result.
+```json
+{
+    "result": 20,
+}
+```
+
+
+In error case, it return with status code ```429 Too Many Requests```
+```json
+{
+  "result": 0,
+  "error": "division by zero"
+}
+```
+
+And in rate limit senario
+
+```json
+{
+  "result": 0,
+  "error": "rate limit exceeded"
+}
+```
 
 To test these endpoints, you can check the [endpoint-test.http](./endpoint-test.http) file in the repo. Also, you can use any tools.
 
 Here is the `curl` commands to test this  endpoint locally for addition:
 
-### Addition
+### 1. Addition
 
 ```bash
 curl -X POST http://localhost:8080/calculate \
@@ -109,7 +141,7 @@ curl -X POST http://localhost:8080/calculate \
 }'
 ```
 
-### Subtraction
+### 2. Subtraction
 
 ```bash
 curl -X POST http://localhost:8080/calculate \
@@ -122,7 +154,7 @@ curl -X POST http://localhost:8080/calculate \
 }'
 ```
 
-### Multiplication
+### 3. Multiplication
 
 ```bash
 curl -X POST http://localhost:8080/calculate \
@@ -136,7 +168,7 @@ curl -X POST http://localhost:8080/calculate \
 ```
 
 
-### Division
+### 4. Division
 
 ```bash
 curl -X POST http://localhost:8080/calculate \
@@ -149,7 +181,7 @@ curl -X POST http://localhost:8080/calculate \
 }'
 ```
 
-### Modulo
+### 5. Modulo
 
 ```bash
 curl -X POST http://localhost:8080/calculate \
@@ -162,7 +194,7 @@ curl -X POST http://localhost:8080/calculate \
 }'
 ```
 
-### Power
+### 6. Power
 
 ```bash
 curl -X POST http://localhost:8080/calculate \
@@ -175,7 +207,7 @@ curl -X POST http://localhost:8080/calculate \
 }'
 ```
 
-### Factorial
+### 7. Factorial
 
 ```bash
 curl -X POST http://localhost:8080/calculate \
@@ -183,13 +215,12 @@ curl -X POST http://localhost:8080/calculate \
 -d '{
     "username": "testuser",
     "calculator_type": "factorial",
-    "number1": 10,
-    "number2": 5
+    "number1": 5
 }'
 ```
 
 
-When it reaches it limits, the server will return a ```429 Too Many Request```
+When it reaches it limits, the server will return a ```429 Too Many Requests```
 
 
 Thats it
