@@ -90,7 +90,7 @@ This endpoint is used to send a ```POST``` request to ```/calculator``` endpoint
 
 **Request Body:** This endpoint require ```username, calculator_type, numbers``` in the  payload in the POST request.
 
-**Response:** The response will contain the status of the operation and cluster name and userid
+**Response:** The response will contain the status of the operation and result.
 
 To test these endpoints, you can check the [endpoint-test.http](./endpoint-test.http) file in the repo. Also, you can use any tools.
 
