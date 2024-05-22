@@ -1,15 +1,15 @@
-# Rate-limited Calculator Doccumentation
+# Rate-limited Calculator Documentation
 
 ## Table of Contents
 
 - [Project Details](#project-details)
-  - [About the Project](#about-the-project)
-  - [How Sliding Window Algorithm Works](#how-sliding-window-algorithm-works)
-  - [Architecture of the Implemented System](#architecture-of-the-implemented-system)
+  - [What I exactly implement here](#what-i-exactly-implement-here)
+  - [How Sliding Window Algorithm Works Here](#how-sliding-window-algorithm-works-here)
+  - [Archetecture of the implemented system](#archetecture-of-the-implemented-system)
 - [Run and Test the Project](#run-and-test-the-project)
-  - [Prerequisites](#prerequisites)
+  - [Prerequisite](#prerequisite)
   - [Setup](#setup)
-  - [Running Unit Tests](#running-unit-tests)
+  - [Run unit test](#run-unit-test)
   - [Endpoints](#endpoints)
 
 Before diving into setup and test, firt describe a bit more about this project.
@@ -19,6 +19,7 @@ I implemented a rate-limited calculator service in GoLang, utilizing a sliding w
 
 ## How Sliding Window Algorithm Works Here
 In this system, the sliding window algorithm works by maintaining a record of request timestamps for each user within a specified time window (e.g., one minute). When a new request comes in, the algorithm checks the timestamps and removes any that fall outside the current window. It then counts the remaining timestamps. If the count is below the allowed limit, the request is accepted and the current timestamp is added to the record. If the count exceeds the limit, the request is denied.
+
 ## Archetecture of the implemented system
 In my system, the sliding window algorithm is used to limit the number of requests a user can make within a given time frame. Here's how it works:
 
@@ -90,6 +91,8 @@ This endpoint is used to send a ```POST``` request to ```/calculator``` endpoint
 **Request Body:** This endpoint require ```username, calculator_type, numbers``` in the  payload in the POST request.
 
 **Response:** The response will contain the status of the operation and cluster name and userid
+
+To test these endpoints, you can check the [endpoint-test.http](./endpoint-test.http) file in the repo. Also, you can use any tools.
 
 Here is the `curl` commands to test this  endpoint locally for addition:
 
