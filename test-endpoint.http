@@ -39,5 +39,37 @@ Content-Type: application/json
     "username": "testuser",
     "calculator_type": "divide",
     "number1": 10,
-    "number2": 5
+    "number2": 0
+}
+
+###
+POST http://localhost:8080/calculate
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "calculator_type": "modulo",
+    "number1": 10,
+    "number2": 4
+}
+
+###
+POST http://localhost:8080/calculate
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "calculator_type": "power",
+    "number1": 0,
+    "number2": 0
+}
+
+###
+POST http://localhost:8080/calculate
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "calculator_type": "factorial",
+    "number1": 5
 }
