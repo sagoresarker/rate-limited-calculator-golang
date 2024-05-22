@@ -1,6 +1,6 @@
 module github.com/sagoresarker/rate-limited-calculator-golang
 
-go 1.22.2
+go 1.22
 
 require (
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
