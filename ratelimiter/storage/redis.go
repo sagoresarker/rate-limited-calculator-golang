@@ -26,6 +26,10 @@ func NewRedisStorage(addr string) (*RedisStorage, error) {
 	return &RedisStorage{client: client}, nil
 }
 
+func (s *RedisStorage) Close() error {
+	return s.client.Close()
+}
+
 func (s *RedisStorage) IncrementCount(windowStart time.Time, count int) error {
 	key := fmt.Sprintf("ratelimit:%d", windowStart.Unix())
 
