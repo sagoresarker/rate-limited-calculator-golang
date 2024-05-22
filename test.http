@@ -1,0 +1,43 @@
+### Test Add Operation
+POST http://localhost:8080/calculate
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "calculator_type": "add",
+    "number1": 10,
+    "number2": 5
+}
+
+### Test Subtract Operation
+POST http://localhost:8080/calculate
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "calculator_type": "subtract",
+    "number1": 10,
+    "number2": 5
+}
+
+### Test Multiply Operation
+POST http://localhost:8080/calculate
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "calculator_type": "multiply",
+    "number1": 10,
+    "number2": 5
+}
+
+### Test Divide Operation
+POST http://localhost:8080/calculate
+Content-Type: application/json
+
+{
+    "username": "testuser",
+    "calculator_type": "divide",
+    "number1": 10,
+    "number2": 5
+}
