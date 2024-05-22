@@ -10,6 +10,14 @@ var ErrRateLimitExceeded = fmt.Errorf("rate limit exceeded")
 type RateLimiter interface {
 	AllowRequest() (bool, error)
 }
+type MockRateLimiter struct {
+	Allow bool
+	Err   error
+}
+
+func (m *MockRateLimiter) AllowRequest() (bool, error) {
+	return m.Allow, m.Err
+}
 
 type Storage interface {
 	IncrementCount(windowStart time.Time, count int) error
