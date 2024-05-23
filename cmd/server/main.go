@@ -4,7 +4,7 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo/v4"
 	"github.com/sagoresarker/rate-limited-calculator-golang/calculator"
-	"github.com/sagoresarker/rate-limited-calculator-golang/config.go"
+	"github.com/sagoresarker/rate-limited-calculator-golang/config"
 	"github.com/sagoresarker/rate-limited-calculator-golang/handler"
 	"github.com/sagoresarker/rate-limited-calculator-golang/ratelimiter"
 	"github.com/sagoresarker/rate-limited-calculator-golang/ratelimiter/storage"
