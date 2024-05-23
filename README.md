@@ -107,7 +107,7 @@ This endpoint is used to send a ```POST``` request to ```/calculator``` endpoint
 ```
 
 
-In error case, it return with status code ```429 Too Many Requests```
+In error case,
 ```json
 {
   "result": 0,
@@ -115,7 +115,7 @@ In error case, it return with status code ```429 Too Many Requests```
 }
 ```
 
-And in rate limit senario
+And in rate limit senario, it return with status code ```429 Too Many Requests```
 
 ```json
 {
